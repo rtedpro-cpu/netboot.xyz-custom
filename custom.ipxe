@@ -21,7 +21,7 @@ imgfree
 kernel http://boot.netboot.xyz/wimboot
 initrd -n bootmgr     https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/custom/files/x64/BOOTMGR       bootmgr ||
 initrd -n bootmgr.efi https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/custom/files/x64/bootmgr.efi   bootmgr.efi ||      
-initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/custom/files/x64/Boot/bcd      bcd ||
+initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/custom/files/x64/Boot/BCD      bcd ||
 initrd -n boot.sdi    https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/custom/files/x64/Boot/boot.sdi boot.sdi ||
 initrd -n boot.wim    https://github.com/rtedpro-cpu/windowsnetboot/releases/download/b4/boot.wim boot.wim
 boot || goto exit
@@ -31,7 +31,7 @@ imgfree
 kernel http://boot.netboot.xyz/wimboot
 initrd -n bootmgr     https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/BOOTMGR       bootmgr ||
 initrd -n bootmgr.efi https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/bootmgr.efi   bootmgr.efi ||      
-initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/BCD      bcd ||
+initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/bcd      bcd ||
 initrd -n boot.sdi    https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/boot.sdi boot.sdi ||
 initrd -n boot.wim    https://github.com/rtedpro-cpu/windowsnetboot/releases/download/hbcd/boot.wim boot.wim
 boot || goto exit
