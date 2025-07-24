@@ -9,8 +9,9 @@ clear choice
 menu WindowsNetboot
 item --gap Windows Installations
 item option_one ${space} Boot into WindowsNetboot PE
+item option_beta ${space} Boot into Windows 10 1809
 item --gap Windows Recovery PE(s)
-item option_two ${space} HBCD PE
+item option_two ${space} Boot into HBCD PE
 choose choice || goto exit
 echo ${cls}
 goto ${choice}
@@ -34,6 +35,16 @@ initrd -n bootmgr.efi https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/hea
 initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/bcd      bcd ||
 initrd -n boot.sdi    https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/boot.sdi boot.sdi ||
 initrd -n boot.wim    https://github.com/rtedpro-cpu/windowsnetboot/releases/download/hbcd/boot.wim boot.wim
+boot || goto exit
+
+:option_beta
+imgfree
+kernel http://boot.netboot.xyz/wimboot
+initrd -n bootmgr     https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/BOOTMGR       bootmgr ||
+initrd -n bootmgr.efi https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/bootmgr.efi   bootmgr.efi ||      
+initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/bcd      bcd ||
+initrd -n boot.sdi    https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/boot.sdi boot.sdi ||
+initrd -n boot.wim    https://github.com/rtedpro-cpu/windowsnetboot/releases/download/fullwintest/install.wim boot.wim
 boot || goto exit
 
 :exit
