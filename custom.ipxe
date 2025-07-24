@@ -29,7 +29,7 @@ boot || goto exit
 :option_two
 imgfree
 kernel http://boot.netboot.xyz/wimboot
-initrd -n bootmgr     https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/bootmgr       bootmgr ||
+initrd -n bootmgr     https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/BOOTMGR       bootmgr ||
 initrd -n bootmgr.efi https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/bootmgr.efi   bootmgr.efi ||      
 initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/BCD      bcd ||
 initrd -n boot.sdi    https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/boot.sdi boot.sdi ||
