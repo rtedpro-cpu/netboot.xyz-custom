@@ -17,7 +17,13 @@ goto ${choice}
 goto exit
 
 :option_one
-insert the script for booting here ig
+imgfree
+kernel http://boot.netboot.xyz/wimboot
+initrd -n bootmgr     https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/custom/files/x64/bootmgr       bootmgr ||
+initrd -n bootmgr.efi https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/custom/files/x64/bootmgr.efi   bootmgr.efi ||      
+initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/custom/files/x64/Boot/BCD      bcd ||
+initrd -n boot.sdi    https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/custom/files/x64/Boot/boot.sdi boot.sdi ||
+initrd -n boot.wim    https://github.com/rtedpro-cpu/windowsnetboot/releases/download/b4/boot.wim boot.wim
 boot || goto exit
 
 :option_two
@@ -29,6 +35,7 @@ initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/hea
 initrd -n boot.sdi    https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/custom/hbcd/Boot/boot.sdi boot.sdi ||
 initrd -n boot.wim    https://github.com/rtedpro-cpu/windowsnetboot/releases/download/hbcd/boot.wim boot.wim
 boot || goto exit
+
 :exit
 chain utils.ipxe
 exit
