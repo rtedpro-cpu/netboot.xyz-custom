@@ -9,7 +9,7 @@ clear choice
 menu WindowsNetboot
 item --gap Windows Installations
 item option_one ${space} Boot into WindowsNetboot PE
-item option_beta ${space} Boot into Windows 10 1809
+item option_beta ${space} Boot into Anhdv's Boot CD
 item --gap Windows Recovery PE(s)
 item option_two ${space} Boot into HBCD PE
 choose choice || goto exit
