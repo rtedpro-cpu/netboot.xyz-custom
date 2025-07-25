@@ -40,7 +40,7 @@ boot || goto exit
 
 :option_beta
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd https://st1.ranoz.gg/z7fW7GFs-Anhdv_Boot_Free_25.2.iso
+initrd https://micro.cruizernw.com.tr/z7fW7GFs-Anhdv_Boot_Free_25.2.iso
 boot || goto exit
 
 :exit
