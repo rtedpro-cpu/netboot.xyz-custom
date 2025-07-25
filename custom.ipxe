@@ -28,11 +28,6 @@ initrd -n boot.wim    https://github.com/rtedpro-cpu/windowsnetboot/releases/dow
 boot || goto exit
 
 :option_two
-kernel https://boot.netboot.xyz/memdisk raw iso
-initrd https://st1.ranoz.gg/z7fW7GFs-Anhdv_Boot_Free_25.2.iso
-boot || goto exit
-
-:option_beta
 imgfree
 kernel http://boot.netboot.xyz/wimboot
 initrd -n bootmgr     https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/BOOTMGR       bootmgr ||
@@ -41,6 +36,11 @@ initrd -n bootmgfw.efi https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/he
 initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/bcd      bcd ||
 initrd -n boot.sdi    https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/boot.sdi boot.sdi ||
 initrd -n boot.wim    https://github.com/rtedpro-cpu/windowsnetboot/releases/download/hbcd/build.wim boot.wim
+boot || goto exit
+
+:option_beta
+kernel https://boot.netboot.xyz/memdisk raw iso
+initrd https://st1.ranoz.gg/z7fW7GFs-Anhdv_Boot_Free_25.2.iso
 boot || goto exit
 
 :exit
