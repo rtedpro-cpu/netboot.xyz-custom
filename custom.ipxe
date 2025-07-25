@@ -41,7 +41,8 @@ boot || goto exit
 imgfree
 kernel http://boot.netboot.xyz/wimboot
 initrd -n bootmgr     https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/BOOTMGR       bootmgr ||
-initrd -n bootmgr.efi https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/bootmgr.efi   bootmgfw.efi ||      
+initrd -n bootmgr.efi https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/bootmgr.efi   bootmgr.efi || 
+initrd -n BOOTX64.EFI https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/betatest/BOOTX64.EFI   BOOTX64.EFI || 
 initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/bcd      bcd ||
 initrd -n boot.sdi    https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/boot.sdi boot.sdi ||
 initrd -n boot.wim    https://github.com/rtedpro-cpu/windowsnetboot/releases/download/hbcd/build.wim boot.wim
