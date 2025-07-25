@@ -35,7 +35,7 @@ initrd -n bootmgr.efi https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/hea
 initrd -n bootmgfw.efi https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/betatest/bootmgfw.efi   bootmgfw.efi || 
 initrd -n bcd         https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/bcd      bcd ||
 initrd -n boot.sdi    https://github.com/rtedpro-cpu/windowsnetboot/raw/refs/heads/main/release/hbcd/boot/boot.sdi boot.sdi ||
-initrd -n boot.wim    https://github.com/rtedpro-cpu/windowsnetboot/releases/download/hbcd/build.wim boot.wim
+initrd -n boot.wim    https://github.com/rtedpro-cpu/windowsnetboot/releases/download/hbcd/boot.wim boot.wim
 boot || goto exit
 
 :option_beta
